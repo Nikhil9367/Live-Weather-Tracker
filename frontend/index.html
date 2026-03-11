@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aero | Live Weather Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Aero</h1>
+            <p>Live Weather Tracker</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter a city name..." autocomplete="off" />
+            <button id="searchBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="errorMsg" class="error-msg hidden"></div>
+
+        <div id="weatherCard" class="weather-card hidden">
+            <div class="card-header">
+                <h2 id="cityName">London, GB</h2>
+                <div class="condition-badge" id="conditionBadge">Clear</div>
+            </div>
+
+            <div class="temperature-display">
+                <span class="temp" id="temperature">24</span><span class="unit">°C</span>
+            </div>
+
+            <p class="desc" id="weatherDesc">clear sky</p>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <span class="label">Feels Like</span>
+                    <span class="value" id="feelsLike">25°</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Humidity</span>
+                    <span class="value" id="humidity">60%</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Wind</span>
+                    <span class="value" id="windSpeed">5.2 m/s</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Pressure</span>
+                    <span class="value" id="pressure">1012 hPa</span>
+                </div>
+            </div>
+
+            <!-- Enhanced Feature: 5-Day Forecast -->
+            <div class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-container" id="forecastContainer">
+                    <!-- Forecast items will be injected here by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background decorative elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
